@@ -1,0 +1,18 @@
+service: takeon-val-zero-continuity
+
+provider:
+  name: aws
+  runtime: java8
+  region: eu-west-2
+  role: arn:aws:iam::FOO:role/lambda_basic_execution # Obscuring ARN, this should be passed
+
+package:
+  artifact: target/val-zero-continuity-1.0-SNAPSHOT.jar
+
+functions:
+  zeroContinuity:
+    handler: uk.gov.ons.validation.serverless.Handler
+    events:
+      - http:
+          path: zero-continuity
+          method: post
