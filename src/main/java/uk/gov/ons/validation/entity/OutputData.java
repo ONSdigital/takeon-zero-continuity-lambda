@@ -1,5 +1,8 @@
 package uk.gov.ons.validation.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OutputData {
 
     public String valueFormula = null;

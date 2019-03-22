@@ -22,7 +22,6 @@ public class ZeroContinuity {
         try {
             InputData inputData = new ObjectMapper().readValue(inputJson, InputData.class);
             outputData = runValidationRule(inputData);
-            LOG.info("output: {}", outputData.toString());
         } catch (JsonProcessingException e) {
             LOG.error("json error: {}", e.getMessage());
             outputData = new OutputData(null, null, null, "Error parsing source JSON: " + inputJson);
